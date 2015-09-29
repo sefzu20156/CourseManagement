@@ -2,20 +2,22 @@ package com.domain;
 
 /**
  * @author Administrator
- *
+ * øŒ≥Ã¿‡
  */
 public class Courses {
 	
 	private String grade;
 	private String major;
-	private int majorNum;
+	private String majorNum;
 	private String courseName;
 	private String type;
-	private float credit;
-	private int hour;
-	private int syhour;
-	private int sjhour;
-	
+	private String credit;
+	private String hour;
+	private String syhour;
+	private String sjhour;
+	private String week;
+	private String teacher;
+	private String remarks;
 	public String getGrade() {
 		return grade;
 	}
@@ -28,10 +30,10 @@ public class Courses {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public int getMajorNum() {
+	public String getMajorNum() {
 		return majorNum;
 	}
-	public void setMajorNum(int majorNum) {
+	public void setMajorNum(String majorNum) {
 		this.majorNum = majorNum;
 	}
 	public String getCourseName() {
@@ -46,30 +48,49 @@ public class Courses {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public float getCredit() {
+	public String getCredit() {
 		return credit;
 	}
-	public void setCredit(float credit) {
+	public void setCredit(String credit) {
 		this.credit = credit;
 	}
-	public int getHour() {
+	public String getHour() {
 		return hour;
 	}
-	public void setHour(int hour) {
+	public void setHour(String hour) {
 		this.hour = hour;
 	}
-	public int getSyhour() {
+	public String getSyhour() {
 		return syhour;
 	}
-	public void setSyhour(int syhour) {
+	public void setSyhour(String syhour) {
 		this.syhour = syhour;
 	}
-	public int getSjhour() {
+	public String getSjhour() {
 		return sjhour;
 	}
-	public void setSjhour(int sjhour) {
+	public void setSjhour(String sjhour) {
 		this.sjhour = sjhour;
 	}
+	public String getWeek() {
+		return week;
+	}
+	public void setWeek(String week) {
+		this.week = week;
+	}
+	public String getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+	
 	
 
 }
