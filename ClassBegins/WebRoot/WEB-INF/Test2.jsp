@@ -1,3 +1,5 @@
+<%@page import="com.excelcl.DataExport"%>
+<%@page import="com.domain.Courses"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -6,7 +8,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
-<!-- CSS goes in the document HEAD or added to your external stylesheet -->
 <style type="text/css">table.hovertable {	font-family: verdana,arial,sans-serif;	font-size:11px;	color:#333333;	border-width: 1px;	border-color: #999999;	border-collapse: collapse;}
 table.hovertable th {	background-color:#c3dde0;	border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #a9c6c9;}
 table.hovertable tr {	background-color:#d4e3e5;}
@@ -33,18 +34,25 @@ table.hovertable td {	border-width: 1px;	padding: 8px;	border-style: solid;	bord
 <td style="background-color:#E6E6FA;height:500px;width:1200px;text-align:top;">
    <h2> 2015上学期计算机科学与技术</h2>
    <!--<table border=1px  width=1200px height=200px style=margin-left:20px;>-->
+   
+   <%
+          DataExport dataexport =new DataExport();
+          ArrayList<Courses> al=dataexport.queryCourses();
+          
+    %>
+   
    <table class="hovertable" style=margin-left:20px;>
       <tr><th>年级</th><th>专业</th><th>专业人数</th><th>课程名称</th><th>选修类型</th><th>学分</th><th>学时</th><th>实验学时</th><th>上机学时</th><th>起迄周序</th><th>任课教师</th><th>备注</th></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      
+   <%
+   for(Courses c:al){
+       out.print(" <tr><td>"+c.getGrade()+"</td><td>"+c.getMajor()
+       +"</td><td>"+c.getMajorNum()+"</td><td>"+c.getCourseName()+"</td><td>"+
+       c.getType()+"</td><td>"+c.getCredit()+"</td><td>"+c.getHour()
+       +"</td><td>"+c.getSyhour()+"</td><td>"+c.getSjhour()+"</td><td>"+
+       c.getWeek()+"</td><td>"+c.getTeacher()+"</td><td>"+c.getRemarks()+"</td></tr>");
+    }
+    %>
               
    </table>
 </td>

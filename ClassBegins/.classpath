@@ -20,9 +20,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/软件工程/jxl.jar"/>
-	<classpathentry kind="lib" path="D:/数据库/SQL jar包/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="D:/数据库/SQL jar包/msbase.jar"/>
 	<classpathentry kind="lib" path="D:/数据库/SQL jar包/mssqlserver.jar"/>
 	<classpathentry kind="lib" path="D:/数据库/SQL jar包/msutil.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/数据库/SQL jar包/sqljdbc4.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
