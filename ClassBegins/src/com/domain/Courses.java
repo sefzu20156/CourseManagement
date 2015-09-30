@@ -90,7 +90,4 @@ public class Courses {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	
-	
-
 }

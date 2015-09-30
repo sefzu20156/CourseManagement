@@ -17,19 +17,22 @@ public class ExcelImport {
 	public static void main(String[] args){
 	
 	try {
+		//设置workbook的编码方式以解决乱码问题
 		WorkbookSettings workbookSettings = new WorkbookSettings();
         workbookSettings.setEncoding("UTF-8");
+        //创建一个workbook对象
 		Workbook workbook = Workbook.getWorkbook(new File("d:/courses.xls"));
+		//创建sheet工作表
 		Sheet sheet=workbook.getSheet(0);
 		for(int i=2;i<sheet.getRows();i++){
 			ArrayList<String> data=new ArrayList<String>();
 			for(int j=0;j<sheet.getColumns();j++){
 				Cell cell=sheet.getCell(j,i);
-				data.add(j,cell.getContents().replaceAll(String.valueOf((char) 160),""));
-				//System.out.print(cell.getContents()+"   ");
+				//data.add(j,cell.getContents().replaceAll(String.valueOf((char) 160),""));
+				System.out.print(cell.getContents().replaceAll(String.valueOf((char) 160),"")+"   ");
 			}
-			//System.out.println();
-			addCourse(getCourse(data));
+			System.out.println();
+			//addCourse(getCourse(data));
 		}
 		workbook.close();
 	} catch (Exception e) {
@@ -39,6 +42,11 @@ public class ExcelImport {
 	
     }
 	
+	/**
+	 * 将Excel导出的数据添加到course对象中
+	 * @param data
+	 * @return
+	 */
 	public static Courses getCourse(ArrayList<String> data){
 
 		Courses course=new Courses();
@@ -59,7 +67,10 @@ public class ExcelImport {
 		return course;
 	}
 	
-
+    /**
+     * 将课程对象添加到数据库中
+     * @param course
+     */
 	public static void addCourse(Courses course){
 
 		String sql="insert into 课程信息表  values(?,?,?,?,?,?,?,?,?,?,?,?)";

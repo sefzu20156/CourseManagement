@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <td style="background-color:#E6E6FA;height:800px;width:1200px;text-align:top;">
    </br>
    <h2> 2015上学期计算机科学与技术 开课计划书</h2>
-   <table border=1px bordercolor=blue width=1200px height=200px>
+   <table border=1px  width=1200px height=200px style=margin-left:20px;>
       <tr><th>年级</th><th>专业</th><th>专业人数</th><th>课程名称</th><th>选修类型</th><th>学分</th><th>学时</th><th>实验学时</th><th>上机学时</th><th>起迄周序</th><th>任课教师</th><th>备注</th></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
